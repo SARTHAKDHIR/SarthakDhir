@@ -1,4 +1,4 @@
-# Supply Chain AI Assistant — RAG System
+#AI Assistant — RAG System
 
 A production-grade Retrieval-Augmented Generation (RAG) system that lets you query Excel-based business data using natural language. Upload your data, ask questions, and get LLM-powered answers backed by hybrid vector + BM25 retrieval.
 

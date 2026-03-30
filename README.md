@@ -11,7 +11,7 @@ clean, deployable software.
 | Project | What it does | Stack |
 |---|---|---|
 | **AI Assistant RAG** | Production RAG system — upload Excel data and query it in natural language using hybrid vector + BM25 retrieval and NVIDIA NIM LLMs | FastAPI · ChromaDB · NVIDIA NIM · Streamlit · Docker |
-| **Case Cost Price AI** | CatBoost regression web app that predicts watch case costs from material and dimension specs, with ±5% variance range | CatBoost · Flask · scikit-learn · Chart.js |
+| **Cost Price AI** | CatBoost regression web app that predicts watch case costs from material and dimension specs, with ±5% variance range | CatBoost · Flask · scikit-learn · Chart.js |
 | **Smart Vendor Order Allocation** | Capacity-aware order allocation engine with rollover logic across vendors, exports formatted Excel output | Python · Tkinter · pandas · openpyxl |
 | **Excel Demand Toolkit** | 3-tool desktop suite — vendor merging, VLOOKUP joins, and PO-based shortage allocation | Python · Tkinter · pandas |
 | **Demand Allocation Studio** | Multi-month demand planner across primary and alternate resources with shortage tracking | Python · Tkinter · pandas |

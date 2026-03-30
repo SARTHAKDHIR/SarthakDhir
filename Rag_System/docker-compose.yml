@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: supply_chain_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data          # persist ChromaDB and evaluation DB
+    env_file:
+      - .env
+    restart: unless-stopped
+
+  streamlit:
+    build: .
+    container_name: supply_chain_ui
+    command: streamlit run streamlit_app.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    depends_on:
+      - api
+    restart: unless-stopped

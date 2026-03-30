@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Price Sense AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-icon">AI</div>
+                <div>
+                    <div class="brand-name">CasePrice</div>
+                    <div class="brand-sub">Sense AI</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-label">Tools</div>
+                <a href="#" class="nav-item active">
+                    <span class="nav-icon">&#9670;</span> Price Predictor
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-footer-text">Built by Sarthak Dhir</div>
+                <div class="sidebar-footer-text muted">v1.0 &mdash; CatBoost ML</div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+
+            <!-- TOP BAR -->
+            <header class="topbar">
+                <div class="topbar-title">
+                    <h1>Price Predictor</h1>
+                    <p>Enter watch case specifications to get an AI-estimated price</p>
+                </div>
+                <div class="topbar-badge {% if not model_loaded %}demo{% endif %}">
+                    {% if model_loaded %}ML Model Active{% else %}Demo Mode{% endif %}
+                </div>
+            </header>
+
+            <!-- FORM CARD -->
+            <div class="content">
+                <form method="POST" id="predictForm">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon">&#9670;</span>
+                            Material &amp; Finish Specifications
+                        </div>
+                        <div class="card-body grid-2">
+                            {% for col, values in options.items() %}
+                            <div class="field">
+                                <label>{{ col }}</label>
+                                <div class="select-wrapper">
+                                    <select name="{{ col }}" required>
+                                        <option value="" disabled selected>Select {{ col }}</option>
+                                        {% for v in values %}
+                                        <option value="{{ v }}">{{ v }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <span class="select-arrow">&#8964;</span>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon">&#9632;</span>
+                            Dimensions &amp; Costs
+                        </div>
+                        <div class="card-body grid-3">
+                            {% for col in numeric_features %}
+                            <div class="field">
+                                <label>{{ col }}</label>
+                                <input type="number" step="0.01" name="{{ col }}" placeholder="0.00" required>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <button type="submit" class="predict-btn">
+                        Run Prediction &rarr;
+                    </button>
+
+                </form>
+
+                <!-- RESULT -->
+                {% if result %}
+                <div class="result-section">
+                    {% if result.demo %}
+                    <div class="demo-banner">Demo Mode — connect a trained model for real predictions</div>
+                    {% endif %}
+                    <div class="result-grid">
+                        <div class="result-card primary">
+                            <div class="result-label">Predicted Price</div>
+                            <div class="result-value">&#8377; {{ result.price }}</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label">Lower Estimate</div>
+                            <div class="result-value green">&#8377; {{ result.low }}</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label">Upper Estimate</div>
+                            <div class="result-value red">&#8377; {{ result.high }}</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label">Variance</div>
+                            <div class="result-value muted">&plusmn; {{ result.margin }}%</div>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-title">Price Range Analysis</div>
+                        <div class="chart-wrap">
+                            <canvas id="rangeChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    const predicted = {{ result.price }};
+                    const low = {{ result.low }};
+                    const high = {{ result.high }};
+
+                    const ctx = document.getElementById('rangeChart').getContext('2d');
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Lower Estimate', 'Predicted Price', 'Upper Estimate'],
+                            datasets: [{
+                                data: [low, predicted, high],
+                                backgroundColor: [
+                                    'rgba(52, 211, 153, 0.2)',
+                                    'rgba(99, 102, 241, 0.25)',
+                                    'rgba(248, 113, 113, 0.2)'
+                                ],
+                                borderColor: [
+                                    '#34d399',
+                                    '#6366f1',
+                                    '#f87171'
+                                ],
+                                borderWidth: 2,
+                                borderRadius: 8,
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: {
+                                    backgroundColor: '#1e1e2e',
+                                    padding: 12,
+                                    cornerRadius: 8,
+                                    callbacks: {
+                                        label: function(ctx) {
+                                            return ' ₹' + ctx.parsed.y.toFixed(2);
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: false,
+                                    grid: { color: 'rgba(255,255,255,0.05)' },
+                                    ticks: {
+                                        color: '#94a3b8',
+                                        callback: v => '₹' + v.toLocaleString()
+                                    }
+                                },
+                                x: {
+                                    grid: { display: false },
+                                    ticks: { color: '#94a3b8', font: { weight: '600' } }
+                                }
+                            }
+                        }
+                    });
+                </script>
+                {% endif %}
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

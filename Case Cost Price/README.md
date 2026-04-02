@@ -1,4 +1,4 @@
-# Case Price Sense AI
+# Case Cost Price AI
 
 A production ML web application that predicts watch case prices based on physical specifications and material properties, built using CatBoost and Flask.
 

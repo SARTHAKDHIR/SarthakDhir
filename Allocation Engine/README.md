@@ -1,4 +1,4 @@
-# Excel Demand Toolkit
+# Allocation Engine
 
 A desktop GUI toolkit for supply chain demand processing — combining vendor data, running VLOOKUPs, and allocating shortages against open POs and PRs.
 

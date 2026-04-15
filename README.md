@@ -1,100 +1,76 @@
 
 
+
+
+
 # Sarthak Dhir
-### AI Engineer  ·  Generative AI  ·  Automation  ·  MLOps
+### AI Engineer · Generative AI · Automation · MLOps
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sarthak-dhir-0320b1220)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/SARTHAKDHIR)
 
-
-
-
----
-
-Building end-to-end AI systems — RAG pipelines, agentic backends, ML prediction APIs, and intelligent automation tools. Currently at Timex Group deploying AI in supply chain contexts.
-
----
-
-## Skills
-
-
-
-
-**Generative AI & RAG**
-- LangChain / LangGraph
-- ChromaDB, vector search
-- Hybrid retrieval & reranking
-- NVIDIA NIM, Groq Llama 3.3 70B
-- LangSmith observability
-
-	
-
-**Machine learning**
-- scikit-learn, CatBoost
-- Regression & classification
-- Cross-validation & tuning
-- Power BI / DAX analytics
-- Data pipelines with pandas
-
-	
-
-**Automation & backend**
-- Python automation & scripting
-- FastAPI / REST APIs
-- Docker, Azure Container Apps
-- Supabase / PostgreSQL
-- Streamlit UIs
+![Profile Views](https://komarev.com/ghpvc/?username=SARTHAKDHIR&color=378ADD&style=flat)
 
 
 
 
 ---
 
-## Projects
+Building end-to-end AI systems — from RAG pipelines and agentic backends to ML prediction APIs and intelligent automation tools. Currently at Timex Group deploying AI in supply chain contexts.
 
-### [ResearchIQ](https://github.com/SARTHAKDHIR/ResearchIQ) — Hybrid Research Intelligence Agent
+---
 
+## 🤖 What I build
+
+| Area | Focus |
+|---|---|
+| **Generative AI & RAG** | LLM integration, hybrid retrieval, query rewriting, reranking, evaluation |
+| **Agentic AI & Automation** | ReAct agents, tool use, LangChain, workflow automation, LangSmith tracing |
+| **ML & Prediction APIs** | Regression models, cross-validation, production-deployed FastAPI services |
+| **Deployment & Infra** | Docker, Azure Container Apps, FastAPI, Supabase, ChromaDB |
+
+---
+
+## 🚀 Projects
+
+### 🔬 [ResearchIQ](https://github.com/SARTHAKDHIR/ResearchIQ) — Hybrid Research Intelligence Agent
 > Upload PDFs. Ask anything. Get cited, structured research reports.
 
-Combines local PDF knowledge (ChromaDB semantic search) with live web intelligence (Tavily) via a LangChain ReAct agent. Auto-detects stale knowledge and falls back to web search. Full LangSmith observability with structured JSON report output.
+Combines local PDF knowledge (ChromaDB semantic search) with live web intelligence (Tavily) via a LangChain ReAct agent. Auto-detects stale knowledge and falls back to web search. Full LangSmith observability.
 
 `LangChain` `ChromaDB` `Groq Llama 3.3 70B` `Tavily` `FastAPI` `Supabase` `Streamlit` `Docker` `Azure Container Apps`
 
 ---
 
-### AI Assistant RAG — Production RAG System
-
-Upload Excel data and query in natural language using hybrid vector + BM25 retrieval with NVIDIA NIM LLMs.
+### 📊 AI Assistant RAG — Production RAG System
+Upload Excel data and query it in natural language using hybrid vector + BM25 retrieval with NVIDIA NIM LLMs.
 
 `FastAPI` `ChromaDB` `NVIDIA NIM` `Streamlit` `Docker`
 
 ---
 
-### Cost Price AI — ML Prediction API
-
-CatBoost regression predicting watch case costs from material and dimension specs with ±5% variance range.
+### 💰 Cost Price AI — ML Prediction API
+CatBoost regression web app predicting watch case costs from material and dimension specs with ±5% variance range.
 
 `CatBoost` `Flask` `scikit-learn` `Chart.js`
 
 ---
 
-### Smart Vendor Order Allocation — Automation Tool
-
+### 📦 Smart Vendor Order Allocation
 Capacity-aware order allocation engine with rollover logic across vendors. Exports formatted Excel output.
 
 `Python` `pandas` `openpyxl` `Tkinter`
 
 ---
 
-### Demand Allocation Studio — Planning Automation
-
+### 📅 Demand Allocation Studio
 Multi-month demand planner across primary and alternate resources with shortage tracking.
 
 `Python` `pandas` `Tkinter`
 
 ---
 
-## Tech stack
+## 🛠️ Tech stack
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
@@ -106,15 +82,19 @@ Multi-month demand planner across primary and alternate resources with shortage 
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat&logo=supabase&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat&logo=powerbi&logoColor=black)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikitlearn&logoColor=white)
-![pandas](https://img.shields.io/badge/pandas-150458?style=flat&logo=pandas&logoColor=white)
+
+---
+
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=SARTHAKDHIR&layout=compact&hide_border=true&title_color=185FA5)
+
+
+
 
 ---
 
 
 
-  Open to AI Engineer / ML Engineer roles (1–3 yr band) — Chandigarh tricity or remote
   
 
-
-  Connect on LinkedIn ↗
+  Connect on LinkedIn

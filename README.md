@@ -121,7 +121,7 @@ Multi-month demand planner across primary and alternate resources with shortage 
 
 <div align="center">
 
-*Open to AI Engineer / ML Engineer roles (1–3 yr band) — Chandigarh tricity or remote*
+
 
 [![LinkedIn](https://img.shields.io/badge/Connect%20on%20LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sarthak-dhir-0320b1220)
 

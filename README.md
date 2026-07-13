@@ -2,7 +2,7 @@
 
 # Sarthak Dhir
 
-### AI Engineer &nbsp;·&nbsp; Generative AI &nbsp;·&nbsp; Automation &nbsp;·&nbsp; MLOps
+### AI Engineer &nbsp;·&nbsp; Multi-Agent Systems &nbsp;·&nbsp; Generative AI & RAG &nbsp;·&nbsp; MLOps
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sarthak-dhir-0320b1220)
 &nbsp;
@@ -12,7 +12,22 @@
 
 ---
 
-Building end-to-end AI systems — RAG pipelines, agentic backends, ML prediction APIs, and intelligent automation tools. Currently at Timex Group deploying AI in supply chain contexts.
+Building end-to-end AI systems — multi-agent orchestration, RAG pipelines, agentic backends, ML prediction APIs, and intelligent automation. Currently at Timex Group deploying AI in supply chain contexts.
+
+---
+
+## 🚀 Flagship Project
+
+### 🧭 [NexusMind AI](https://github.com/SARTHAKDHIR/nexusmind-ai) — Multi-Agent, Multi-LLM Research Intelligence Platform
+
+> **[▶ Live demo](https://nexusmind-ai.streamlit.app)** — give it a company, get a sourced competitive-intelligence report written by six collaborating AI agents.
+
+- **Six-agent LangGraph pipeline** (Planner → parallel Web + Internal Researchers → Critic → Analyst → Writer) with a **self-correcting research loop** — the Critic detects coverage gaps and re-routes targeted follow-up research, with loop control enforced deterministically in graph logic, not prompts.
+- **Multi-LLM failover**: Groq (Llama 3.3 70B) primary → OpenAI (gpt-4.1-mini) automatic fallback with retry/backoff and per-provider usage tracking — the pipeline survives rate limits and outages with zero user impact.
+- **Dual-source RAG**: live web search (Tavily) + company-filtered ChromaDB vector corpus, kept separately attributed so contradictions surface instead of silently blending.
+- **Production engineering**: 21-test Pytest suite gating CI/CD (GitHub Actions), deployed on **AWS EC2** (systemd, DuckDNS, cost budgets) and Streamlit Cloud, strict Pydantic-schema report output, live agent-trace panel.
+
+`LangGraph` `LangChain` `Groq` `OpenAI` `Tavily` `ChromaDB` `sentence-transformers` `Pydantic` `Streamlit` `Pytest` `GitHub Actions` `AWS EC2` `Docker`
 
 ---
 
@@ -22,13 +37,14 @@ Building end-to-end AI systems — RAG pipelines, agentic backends, ML predictio
 <tr>
 <td valign="top" width="33%">
 
-**Generative AI & RAG**
-- LangChain / LangGraph
+**Agentic AI & RAG**
+- LangGraph multi-agent orchestration
+- LangChain, ReAct agents
+- Multi-LLM failover & routing
 - ChromaDB, vector search
 - Hybrid retrieval & reranking
-- NVIDIA NIM, Groq Llama 3.3 70B
+- Groq, OpenAI, NVIDIA NIM
 - LangSmith observability
-- Nomic embeddings
 
 </td>
 <td valign="top" width="33%">
@@ -44,13 +60,14 @@ Building end-to-end AI systems — RAG pipelines, agentic backends, ML predictio
 </td>
 <td valign="top" width="33%">
 
-**Automation & Backend**
-- Python automation & scripting
+**Cloud, Backend & MLOps**
+- AWS EC2 (systemd, IAM, budgets)
+- CI/CD with GitHub Actions
 - FastAPI / REST APIs
 - Docker, Azure Container Apps
 - Supabase / PostgreSQL
 - Streamlit UIs
-- Excel automation (openpyxl)
+- Python automation & scripting
 
 </td>
 </tr>
@@ -58,9 +75,9 @@ Building end-to-end AI systems — RAG pipelines, agentic backends, ML predictio
 
 ---
 
-## 🚀 Projects
+## 🔬 More Projects
 
-### 🔬 [ResearchIQ](https://github.com/SARTHAKDHIR/ResearchIQ) — Hybrid Research Intelligence Agent
+### [ResearchIQ](https://github.com/SARTHAKDHIR/ResearchIQ) — Hybrid Research Intelligence Agent
 
 > Upload PDFs. Ask anything. Get cited, structured research reports.
 
@@ -105,8 +122,12 @@ Multi-month demand planner across primary and alternate resources with shortage 
 ## 🛠️ Tech Stack
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
 ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat&logo=langchain&logoColor=white)
+![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=flat&logo=langgraph&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS_EC2-FF9900?style=flat&logo=amazonwebservices&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=githubactions&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat&logo=microsoftazure&logoColor=white)
 ![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6B35?style=flat&logoColor=white)
@@ -120,8 +141,6 @@ Multi-month demand planner across primary and alternate resources with shortage 
 ---
 
 <div align="center">
-
-
 
 [![LinkedIn](https://img.shields.io/badge/Connect%20on%20LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sarthak-dhir-0320b1220)
 
